@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+</head>
+<body>
+    <h1>The email address you entered is a VALID email address. Thank you.</h1>
+    <div>
+        <table width="500px">
+            <tr>
+                <th>Email Addresses Entered</th>
+            </tr>
+                {% for e in emails %}
+                <tr>
+                    <td>{{e.email}}</td>
+                    <td>{{e.created_at}}</td>
+                    <td><a href="/delete/{{e.id}}">Delete</a></td>
+                </tr>
+                {% endfor %}
+        </table>
+        <button><a href="/">Add Email</a></button>
+    </div>
+</body>
+</html>
